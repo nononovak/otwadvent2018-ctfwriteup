@@ -8,7 +8,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 
 ## Problems
 
-1. [Day0 Challenge - reversing (300)](./day0.md) - __SOLVED__: 
+1. [Day0 Challenge - reversing (300)](./day0.md) - __SOLVED__: x86 disassembly - RC4 and bit operations to recover the flag
 2. Sanity Check - misc (1): Giveaway in the IRC channel: `AOTW{HoHoHo}`
 3. [easteregg1 - web (50)](./easteregg1.md) - __SOLVED__: Follow `/robots.txt`
 4. Day 1 [vault1 - misc (300)](./day1.md) - __SOLVED__: 
