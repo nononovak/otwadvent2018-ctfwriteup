@@ -39,5 +39,5 @@ The final competition results can be found [here](https://advent2018.overthewire
 29. Day 21 [Our Hearts - fun (200)](https://github.com/OverTheWireOrg/advent2018-fashionista): fun challenge part 2, see the link; [my donation](https://twitter.com/jwnovak/status/1077224297553412098)
 30. Day 22 [Elvish art - Pwn (300)](./day22.md) - __SOLVED__: 
 31. Day 23 [Nightmare before christmas - Pwn (350)](./day23.md) - __NOT SOLVED__: 
-32. Day 24 [Santa's vault 2 - Misc (200)](./day24.md) - __SOLVED__: 
+32. Day 24 [Santa's vault 2 - Misc (200)](./day24.md) - __SOLVED__: Interacting with a service and dynamic programming
 33. Day 25 [???](./day25.md) - __NOT SOLVED__: 
