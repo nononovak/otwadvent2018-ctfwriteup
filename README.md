@@ -31,7 +31,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 21. Day 15 [Santa's little recorders - Net/pwn (200)](./day15.md) - __SOLVED__: 
 22. Day 16 [Cryptocow - Web/crypto (200)](./day16.md) - __SOLVED__: Bypassing string encoding using a hash extension attack for command injection
 23. Day 17 [Naughtykit - Pwn/misc (100)](./day17.md) - __NOT SOLVED__: 
-24. Day 18 [Claustrophobic - Pwn/misc (250)](./day18.md) - __SOLVED__: 
+24. Day 18 [Claustrophobic - Pwn/misc (250)](./day18.md) - __SOLVED__: Writing and executing arbitrary files in a restricted bash shell
 25. Day 19 [Pwmanager - Web (200)](./day19.md) - __NOT SOLVED__: 
 26. [easteregg3 - web (50)](./easteregg3.md) - __NOT SOLVED__: 
 27. Day 20 [The grinch - Pwn (350)](./day20.md) - __NOT SOLVED__: 
