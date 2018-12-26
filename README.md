@@ -18,13 +18,13 @@ The final competition results can be found [here](https://advent2018.overthewire
 8. Day 5 Santas PWNSHOP - Pwn (300) - __SOLVED__: 
 9. Day 6 udpsanta - crypto/pwn/reversing (250) - __SOLVED__: 
 10. easteregg2 - web (50) - __NOT SOLVED__: 
-11. Day 7 Homebrew - crypto/web (200) - __SOLVED__: 
+11. Day 7 [Homebrew - crypto/web (200)](./day7.md) - __SOLVED__: self-describing REST API and breaking SRP with a zero key
 12. Day 8 Xmastree - reversing (200) - __SOLVED__: 
 13. Day 9 Tiny - misc/pwn (200) - __SOLVED__: 
 14. tiny_easteregg - misc (50) - __SOLVED__: 
 15. Day 10 Jackinthebox - reversing (300) - __SOLVED__: 
 16. Day 11 Lostpresent - pwn/misc (200) - __SOLVED__: 
-17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: 
+17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: Fixed key XOR in various locations
 18. Day 13 [Honor the Gods - fun (200)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge, see the link
 19. Day 13 [Honor The Gods BONUS - fun (150)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge (bonus), see the link
 20. Day 14 Naughty or nice - Pwn/crypto (300) - __NOT SOLVED__: 
