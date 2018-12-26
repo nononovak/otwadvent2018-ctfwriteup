@@ -28,7 +28,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 18. Day 13 [Honor the Gods - fun (200)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge, see the link
 19. Day 13 [Honor The Gods BONUS - fun (150)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge (bonus), see the link
 20. Day 14 [Naughty or nice - Pwn/crypto (300)](./day14.md) - __NOT SOLVED__: 
-21. Day 15 [Santa's little recorders - Net/pwn (200)](./day15.md) - __SOLVED__: 
+21. Day 15 [Santa's little recorders - Net/pwn (200)](./day15.md) - __SOLVED__: Blind command injection in a JPG description field
 22. Day 16 [Cryptocow - Web/crypto (200)](./day16.md) - __SOLVED__: Bypassing string encoding using a hash extension attack for command injection
 23. Day 17 [Naughtykit - Pwn/misc (100)](./day17.md) - __NOT SOLVED__: 
 24. Day 18 [Claustrophobic - Pwn/misc (250)](./day18.md) - __SOLVED__: Writing and executing arbitrary files in a restricted bash shell
@@ -40,4 +40,6 @@ The final competition results can be found [here](https://advent2018.overthewire
 30. Day 22 [Elvish art - Pwn (300)](./day22.md) - __SOLVED__: Craft shellcode with restricted byte values
 31. Day 23 [Nightmare before christmas - Pwn (350)](./day23.md) - __NOT SOLVED__: 
 32. Day 24 [Santa's vault 2 - Misc (200)](./day24.md) - __SOLVED__: Interacting with a service and dynamic programming
-33. Day 25 [???](./day25.md) - __NOT SOLVED__: 
+33. Day 25 [Endgame - Pwn/net (300)](./day25.md) - __NOT SOLVED__: 
+34. [loatpresent2 - pwn/misc (200)](./lostpresent2.md) - __NOT SOLVED__: 
+35. [Snow Hammer - pwn (400)](./snowhammer.md) - __NOT SOLVED__:
