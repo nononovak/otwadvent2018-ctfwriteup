@@ -27,7 +27,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: Fixed key XOR in various locations
 18. Day 13 [Honor the Gods - fun (200)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge, see the link
 19. Day 13 [Honor The Gods BONUS - fun (150)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge (bonus), see the link
-20. Day 14 Naughty or nice - Pwn/crypto (300) - __SOLVED*__: 
+20. Day 14 [Naughty or nice - Pwn/crypto (300)](./day14.md) - __SOLVED*__: Truncated string and RSA modulus factoring
 21. Day 15 [Santa's little recorders - Net/pwn (200)](./day15.md) - __SOLVED__: Blind command injection in a JPG description field
 22. Day 16 [Cryptocow - Web/crypto (200)](./day16.md) - __SOLVED__: Bypassing string encoding using a hash extension attack for command injection
 23. Day 17 Naughtykit - Pwn/misc (100) - __NOT SOLVED__: 
