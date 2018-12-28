@@ -34,7 +34,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 24. Day 18 [Claustrophobic - Pwn/misc (250)](./day18.md) - __SOLVED__: Writing and executing arbitrary files in a restricted bash shell
 25. Day 19 Pwmanager - Web (200) - __NOT SOLVED__: 
 26. [easteregg3 - web (50)](./easteregg3.md) - __SOLVED*__: Metadata in a trophy image
-27. Day 20 The grinch - Pwn (350) - __NOT SOLVED__: 
+27. Day 20 [The grinch - Pwn (350)](./day20.md) - __SOLVED*__: Format string vuln, stack pivot, and ROP for a shell
 28. Day 21 [Fashionista - Fun (200)](https://github.com/OverTheWireOrg/advent2018-fashionista): fun challenge part 1, see the link
 29. Day 21 [Our Hearts - fun (200)](https://github.com/OverTheWireOrg/advent2018-fashionista): fun challenge part 2, see the link; [my donation](https://twitter.com/jwnovak/status/1077224297553412098)
 30. Day 22 [Elvish art - Pwn (300)](./day22.md) - __SOLVED__: Craft shellcode with restricted byte values
@@ -44,5 +44,5 @@ The final competition results can be found [here](https://advent2018.overthewire
 34. lostpresent2 - pwn/misc (200) - __NOT SOLVED__: 
 35. Snow Hammer - pwn (400) - __NOT SOLVED__:
 
-SOLVED* == solved, but only after some hints when the competition was over
+__SOLVED*__ were solved, but only after some hints when the competition was over
 
