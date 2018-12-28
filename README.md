@@ -20,8 +20,8 @@ The final competition results can be found [here](https://advent2018.overthewire
 10. [easteregg2 - web (50)](./easteregg2.md) - __SOLVED*__: base64 encoded flag in an included script
 11. Day 7 [Homebrew - crypto/web (200)](./day7.md) - __SOLVED__: self-describing REST API and breaking SRP with a zero key
 12. Day 8 Xmastree - reversing (200) - __SOLVED__: 
-13. Day 9 Tiny - misc/pwn (200) - __SOLVED__: 
-14. tiny_easteregg - misc (50) - __SOLVED__: 
+13. Day 9 [Tiny - misc/pwn (200)](./day9.md) - __SOLVED__: Custom encoding and shellcode
+14. [tiny_easteregg - misc (50)](./tiny_easteregg.md) - __SOLVED__: Custom decoding from "tiny" challenge
 15. Day 10 Jackinthebox - reversing (300) - __SOLVED__: 
 16. Day 11 [Lostpresent - pwn/misc (200)](./day11.md) - __SOLVED__: Sudo specific command gives privileged read
 17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: Fixed key XOR in various locations
