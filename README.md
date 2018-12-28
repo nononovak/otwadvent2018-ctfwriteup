@@ -23,7 +23,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 13. Day 9 Tiny - misc/pwn (200) - __SOLVED__: 
 14. tiny_easteregg - misc (50) - __SOLVED__: 
 15. Day 10 Jackinthebox - reversing (300) - __SOLVED__: 
-16. Day 11 Lostpresent - pwn/misc (200) - __SOLVED__: 
+16. Day 11 [Lostpresent - pwn/misc (200)](./day11.md) - __SOLVED__: Sudo specific command gives privileged read
 17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: Fixed key XOR in various locations
 18. Day 13 [Honor the Gods - fun (200)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge, see the link
 19. Day 13 [Honor The Gods BONUS - fun (150)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge (bonus), see the link
