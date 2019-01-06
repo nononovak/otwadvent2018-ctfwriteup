@@ -8,11 +8,11 @@ Download: [mMZfQMAdYKHBUwFDJR8XCr4yd2DS5anm-udpsanta.tar.xz](https://s3.amazonaw
 
 ## Setup
 
-This challenged proved challenging for a number of reasons as I'll describe below, but I had the right idea for a solution basically from the beginning. The description below is out-of-order in terms of how I solved the problem, but I think that this describes the solution to the problem in an easier-to-understand way. Since a lot of the implementation of this attack centered around getting the byte structure, offset, payload, etc setup exactly right, I found it easier to set this challenge up on my own virtual machine and experiment with.
+This challenge proved challenging for a number of reasons as I'll describe below, but I had the right idea for a solution basically from the beginning. The description below is out-of-order in terms of how I solved the problem, but I think that this describes the solution to the problem in an easier-to-understand way. Since a lot of the implementation of this attack centered around getting the byte structure, offset, payload, etc setup exactly right, I found it easier to set this challenge up on my own virtual machine and experiment with.
 
 First off, the challenge provided only a pcap file. From this there were three HTTP connetions over TCP/8000. Two connections contained a `client` and `server` binary which I extracted. The third contained a protobuf specification which proved helpful in understanding the messages. There was also a good deal of UDP/1206 traffic which seemed to give a feel for what kind of traffic was sent with this protocol.
 
-The `client` and `server` binaries seemed to work just fine with an Ubuntu 18.04 OS. Below is some terminal output to give a feel for the setup. The `key` and `iv` were just random bytes, and the `priv` and `pub` were RSA keys created with openssl.
+The `client` and `server` binaries seemed to work just fine with an Ubuntu 18.04 OS. Below is some terminal output to give a feel for the setup. The `key` and `iv` I used for testing were just random bytes, and the `priv` and `pub` were RSA keys created with openssl.
 
 ```sh
 # apt update && apt install -y libprotobuf-c1 libssl1.1
@@ -61,8 +61,8 @@ lrwxrwxrwx  1 john john   37 Dec 14 22:12 public.key -> /opt/udpsanta/userdata/k
 -rw-r--r--  1 john john    6 Dec 14 22:11 user.name
 ```
 
-I chose to experiment with the user `Timmy` as this name was found in the pcap file and contained the most messages to-from the server.
-With all of this setup, I connected client to server over localhost and captured some traffic. I then wrote a python script to decrypt and parse out the commands captured. The script and output are shown below:
+I chose to experiment with the user `Timmy` as this name was found in the pcap file and contained the most messages to and from the server.
+With all of this setup, I connected `client` to `server` over localhost and captured some traffic. I then wrote a python script to decrypt and parse out the commands captured. The script and output are shown below:
 
 ```python
 # protoc -I=. --python_out=. ./udpsanta.proto 
@@ -237,7 +237,7 @@ padding: "I7opdFhJiuD7aXpObsH\000"
 
 ## Protobuf Details
 
-At this point, a little explanation on how the protobufs were constructed for this challenge is needed. First, the protobuf spec from the challenge packet capture was given as
+At this point, a little explanation on how the protobufs were constructed for this challenge is needed. First, the protobuf spec from the challenge packet capture was given as below. Note: I added a couple comments to help my own understanding.
 
 ```
 syntax = "proto3";
@@ -309,7 +309,7 @@ message Response {
 }
 ```
 
-For this challenge, most of the elements in each protobuf are not marked as required which makes things slightly easier. Again, I wrote a python function and reviewed the output to figure out how a protobuf was constructed:
+For this challenge, most of the elements in each protobuf are not marked as required which makes things easier for constructing a new buffer. Again, I wrote a python function and reviewed the output to figure out how a protobuf was constructed:
 
 ```python
 def test_protobuf():
@@ -397,7 +397,7 @@ b'\n\x08aabbccdd\x10\x01'
 b'\n\x08aabbccdd\x10\x01\x1a\rinnerResponse'
 ```
 
-From this it takes some short analysis to see that each 'element' in the protobuf array is roughly 1 bytes type (including the type and ID), 1 byte length (if a variable length type), variable length data.
+From this it takes some short analysis to see that each 'element' in the protobuf array is roughly 1 byte type (including the type and ID), 1 byte length (if a variable length type), and variable length data.
 Since the `innerRequest` will be the type we end up sending later and `innerResponse` is used in the explanation later, the breakdown for that protobuf is:
 
 ```
@@ -431,7 +431,7 @@ Some further implementation details that are relevant in this are:
 
 ## Getting Fuzzy
 
-This part is the biggest logical leap I had to take in order to solve the challenge. After exhausting pretty much every other avenue (replaying packets, sending responses, parts of responses or other data as requests, etc) did I get to this point. It turns out that the protobuf parsing library will sometimes parse random data correctly (who knew!). I only figured this out through fuzzing the `server` program, and a sample of this is given below. The trick to fuzzing here is that our message contains some bit of known bytes (`08 01` corresponding to Command SENDMSG in this case) prepended with random data.
+This part is the biggest logical leap I had to take in order to solve the challenge. After exhausting pretty much every other avenue (replaying packets, sending responses, parts of responses or other data as requests, etc) did I get to this point. It turns out that the protobuf parsing library will sometimes parse random data correctly (who knew!). I only figured this out through fuzzing the `server` program, and a sample of this is given below. The trick to fuzzing here is that our message contains some amount of known bytes (`08 01` corresponding to Command SENDMSG in this case) prepended with random data.
 
 ```python
 def get_sha(data):
@@ -570,9 +570,11 @@ The next step for a padding oracle attack is to create some buffer which we can 
 Block 0: unknown_iv                   random plaintext
 Block 1: modified 2nd-to-last block   08 01 08 01 08 01 08 01 08 01 32 33 ?? ?? ?? ??
 Block 2: unmodified last block        random plaintext
-Block 3: modified target 2TL block    random plaintext
+Block 3*:modified target 2TL block    random plaintext
 Block 4: unmodified target LB         (irrelevant plaintext)  .. .. .. .. .. .. .. 01
 ```
+
+Note: This writeup was written a couple weeks after I finished the problem. I believe I actually inserted another dummy block between number 2 and 3 which I _think_ matches the source code below. Either way, the code below is very similar to the construction described here.
 
 This plaintext block has: some random data to start, several `08 02` elements for Command SENDMSG, `32 33` for a 0x32-long padding element, and a single `0x01` padding byte. By creating several of these and sending them to the server to wait for a response we have a template which we can use as part of a padding oracle attack. Unfortunately, this only works for constructing a template for a single padding length (0x01), but the process can be repeated for each size 1..16.
 
@@ -860,7 +862,6 @@ void get_oracle_prefix(char *username, int npad)
 		srandom(seed);
 		seed++;
 
-		//b'\n\tCharlotte\x1a\x08\x08\x012\x04ABCD'
 		request_size = 0;
 		request[request_size] = 0x0a; request_size++;
 		request[request_size] = strlen(username); request_size++;
@@ -990,7 +991,7 @@ int main(int argc, char **argv)
 
 ## Decrypting Data
 
-Finally we get to the part where we decrypt data. First, we choose a user (lets start with `Timmy`), list all of the messages sent to timmy via the LISTMSGS command, then get the contents for each of those messages via the GETMSG command. Unfortunately, we don't know what the IV is for a particular user so we'll have to solve that first. Luckily the server response with a pretty formulaic error message under various conditions so sending a message we know will return an error and decrypting the first block of the result will give us a close approximation to the padding bytes. Then, with this its "quick" work to list all messages for a user and then get each message. Some python code to do that for "Timmy" is given below.
+Finally we get to the part where we decrypt data. First, we choose a user (lets start with `Timmy`), list all of the messages sent to timmy via the LISTMSGS command, then get the contents for each of those messages via the GETMSG command. Unfortunately, we don't know what the IV is for a particular user so we'll have to solve that first. Luckily the server responds with a pretty formulaic error message under various conditions so sending a message we know will return an error and decrypting the first block of the result will give us a close approximation to the IV bytes. Then, with this its "quick" work to list all messages for a user and then get each message. Some python code to do that for "Timmy" is given below.
 
 ```python
 def xor_bytes(a,b):
@@ -1549,7 +1550,7 @@ plaintext: 000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f  ................
 plaintext: 000f0f0f0f0f0f0f0f0f0f0f0f0f0f0f  ................
 ```
 
-Doing this we find that "Timmy" does not have have the flag in any of his messages (as we might expect). However, we see that "TheRealSanta" user is the one sending "Timmy" those messages. With that we re-start the whole attack (generate templates, recover the IV, list the message IDs, and decrypt the messages) and find that Santa has received many messages from many different users as shown below:
+Doing this we find that "Timmy" does not have have the flag in any of his messages (as we might expect). However, we see that "TheRealSanta" user is the one sending "Timmy" his only message. With that we re-start the whole attack (generate templates, recover the IV, list the message IDs, and decrypt the messages) and find that Santa has received many messages from many different users as shown below:
 
 ```python
 solve_iv('TheRealSanta')
@@ -2098,7 +2099,7 @@ plaintext: 00555063000b0b0b0b0b0b0b0b0b0b0b  .UPc............
 plaintext: 64555063000b0b0b0b0b0b0b0b0b0b0b  dUPc............
 ```
 
-And finally, we see that one user in particular "Jessica" requested that Santa send her the flag for the challenge so we repeat the process a third time to get the flag. This gives Santa's message to "Jessica" with the flag:
+We don't have to decrypt too many to see that the user "Jessica" requested that Santa send her the flag for the challenge so we repeat the process a third time to get the flag. This gives Santa's message to "Jessica" with the flag:
 
 ```python
 solve_iv('Jessica')
@@ -2516,4 +2517,4 @@ plaintext: 0074613951000a0a0a0a0a0a0a0a0a0a  .ta9Q...........
 plaintext: 6c74613951000a0a0a0a0a0a0a0a0a0a  lta9Q...........
 ```
 
-
+Included in that message is the flag we need for the solution `AOTW{Sinterklaas_really_iz_my_Spanish_cousin...}`

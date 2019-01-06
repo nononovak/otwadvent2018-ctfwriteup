@@ -6,6 +6,8 @@ Enclosed is my writeup for the 2018 OTW Advent CTF (https://advent2018.overthewi
 
 The final competition results can be found [here](https://advent2018.overthewire.org/dashboard/scoreboard/).
 
+The competition is now archived at the OverTheWire warzone. Details are at [http://overthewire.org/warzone/advent2018](http://overthewire.org/warzone/advent2018).
+
 ## Problems
 
 1. [Day0 Challenge - reversing (300)](./day0.md) - __SOLVED__: x86 disassembly - RC4 and bit operations to recover the flag
