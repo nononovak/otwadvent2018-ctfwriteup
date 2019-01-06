@@ -16,7 +16,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 6. Day 3 playagame - net (150) - __SOLVED__: 
 7. Day 4 grille_me - crypto/net (150) - __SOLVED__: 
 8. Day 5 Santas PWNSHOP - Pwn (300) - __SOLVED__: 
-9. Day 6 udpsanta - crypto/pwn/reversing (250) - __SOLVED__: 
+9. Day 6 udpsanta - crypto/pwn/reversing (250) - __SOLVED__: Protobuf parsing and CBC padding oracle
 10. [easteregg2 - web (50)](./easteregg2.md) - __SOLVED*__: base64 encoded flag in an included script
 11. Day 7 [Homebrew - crypto/web (200)](./day7.md) - __SOLVED__: self-describing REST API and breaking SRP with a zero key
 12. Day 8 Xmastree - reversing (200) - __SOLVED__: 
@@ -32,7 +32,7 @@ The final competition results can be found [here](https://advent2018.overthewire
 22. Day 16 [Cryptocow - Web/crypto (200)](./day16.md) - __SOLVED__: Bypassing string encoding using a hash extension attack for command injection
 23. Day 17 [Naughtykit - Pwn/misc (100)](./day17.md) - __SOLVED*__: CVE-2018-19788, privesc via systemctl with high UID
 24. Day 18 [Claustrophobic - Pwn/misc (250)](./day18.md) - __SOLVED__: Writing and executing arbitrary files in a restricted bash shell
-25. Day 19 Pwmanager - Web (200) - __NOT SOLVED__: 
+25. Day 19 Pwmanager - Web (200) - __SOLVED*__: 
 26. [easteregg3 - web (50)](./easteregg3.md) - __SOLVED*__: Metadata in a trophy image
 27. Day 20 [The grinch - Pwn (350)](./day20.md) - __SOLVED*__: Format string vuln, stack pivot, and ROP for a shell
 28. Day 21 [Fashionista - Fun (200)](https://github.com/OverTheWireOrg/advent2018-fashionista): fun challenge part 1, see the link
