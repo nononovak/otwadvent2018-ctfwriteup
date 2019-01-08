@@ -13,10 +13,10 @@ The competition is now archived at the OverTheWire warzone. Details are at [http
 1. [Day0 Challenge - reversing (300)](./day0.md) - __SOLVED__: x86 disassembly - RC4 and bit operations to recover the flag
 2. Sanity Check - misc (1): Giveaway in the IRC channel: `AOTW{HoHoHo}`
 3. [easteregg1 - web (50)](./easteregg1.md) - __SOLVED__: Follow `/robots.txt`
-4. Day 1 vault1 - misc (300) - __SOLVED__: 
+4. Day 1 [vault1 - misc (300)](./day1.md) - __SOLVED__: Programming problem based on a info leak
 5. Day 2 boxy - reversing (200) - __SOLVED__: 
 6. Day 3 playagame - net (150) - __SOLVED__: 
-7. Day 4 grille_me - crypto/net (150) - __SOLVED__: 
+7. Day 4 [grille_me - crypto/net (150)](./day4.md) - __SOLVED__: Three consecutive ciphers based off of character patterns
 8. Day 5 Santas PWNSHOP - Pwn (300) - __SOLVED__: 
 9. Day 6 [udpsanta - crypto/pwn/reversing (250)](./day6.md) - __SOLVED__: Protobuf parsing and CBC padding oracle
 10. [easteregg2 - web (50)](./easteregg2.md) - __SOLVED*__: base64 encoded flag in an included script
@@ -24,7 +24,7 @@ The competition is now archived at the OverTheWire warzone. Details are at [http
 12. Day 8 Xmastree - reversing (200) - __SOLVED__: 
 13. Day 9 [Tiny - misc/pwn (200)](./day9.md) - __SOLVED__: Custom encoding and shellcode
 14. [tiny_easteregg - misc (50)](./tiny_easteregg.md) - __SOLVED__: Custom decoding from "tiny" challenge
-15. Day 10 Jackinthebox - reversing (300) - __SOLVED__: 
+15. Day 10 [Jackinthebox - reversing (300)](./day10.md) - __SOLVED__: Custom instruction set for reversing followed by exhaustive search for flag
 16. Day 11 [Lostpresent - pwn/misc (200)](./day11.md) - __SOLVED__: Sudo specific command gives privileged read
 17. Day 12 [Overthecounter - Crypto/web (200)](./day12.md) - __SOLVED__: Fixed key XOR in various locations
 18. Day 13 [Honor the Gods - fun (200)](https://github.com/OverTheWireOrg/advent2018-honorthegods): fun challenge, see the link
