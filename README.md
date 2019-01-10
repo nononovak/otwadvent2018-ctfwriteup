@@ -17,7 +17,7 @@ The competition is now archived at the OverTheWire warzone. Details are at [http
 5. Day 2 boxy - reversing (200) - __SOLVED__: 
 6. Day 3 playagame - net (150) - __SOLVED__: 
 7. Day 4 [grille_me - crypto/net (150)](./day4.md) - __SOLVED__: Three consecutive ciphers based off of character patterns
-8. Day 5 Santas PWNSHOP - Pwn (300) - __SOLVED__: 
+8. Day 5 [Santas PWNSHOP - Pwn (300)](./day5.md) - __SOLVED__: Reverse a binary, find a backdoor, and ROP with a return to libc
 9. Day 6 [udpsanta - crypto/pwn/reversing (250)](./day6.md) - __SOLVED__: Protobuf parsing and CBC padding oracle
 10. [easteregg2 - web (50)](./easteregg2.md) - __SOLVED*__: base64 encoded flag in an included script
 11. Day 7 [Homebrew - crypto/web (200)](./day7.md) - __SOLVED__: self-describing REST API and breaking SRP with a zero key
