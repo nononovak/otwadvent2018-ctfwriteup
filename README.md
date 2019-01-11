@@ -14,14 +14,14 @@ The competition is now archived at the OverTheWire warzone. Details are at [http
 2. Sanity Check - misc (1): Giveaway in the IRC channel: `AOTW{HoHoHo}`
 3. [easteregg1 - web (50)](./easteregg1.md) - __SOLVED__: Follow `/robots.txt`
 4. Day 1 [vault1 - misc (300)](./day1.md) - __SOLVED__: Programming problem based on a info leak
-5. Day 2 boxy - reversing (200) - __SOLVED__: 
-6. Day 3 playagame - net (150) - __SOLVED__: 
+5. Day 2 [boxy - reversing (200)](./day2.md) - __SOLVED__: Custom image encoder and morse code
+6. Day 3 [playagame - net (150)](./day3.md) - __SOLVED__: Programming and parsing of a gameboard
 7. Day 4 [grille_me - crypto/net (150)](./day4.md) - __SOLVED__: Three consecutive ciphers based off of character patterns
 8. Day 5 [Santas PWNSHOP - Pwn (300)](./day5.md) - __SOLVED__: Reverse a binary, find a backdoor, and ROP with a return to libc
 9. Day 6 [udpsanta - crypto/pwn/reversing (250)](./day6.md) - __SOLVED__: Protobuf parsing and CBC padding oracle
 10. [easteregg2 - web (50)](./easteregg2.md) - __SOLVED*__: base64 encoded flag in an included script
 11. Day 7 [Homebrew - crypto/web (200)](./day7.md) - __SOLVED__: self-describing REST API and breaking SRP with a zero key
-12. Day 8 Xmastree - reversing (200) - __SOLVED__: 
+12. Day 8 [Xmastree - reversing (200)](./day8.md) - __SOLVED__: identifying and solving a constraint solver for a reversing binary
 13. Day 9 [Tiny - misc/pwn (200)](./day9.md) - __SOLVED__: Custom encoding and shellcode
 14. [tiny_easteregg - misc (50)](./tiny_easteregg.md) - __SOLVED__: Custom decoding from "tiny" challenge
 15. Day 10 [Jackinthebox - reversing (300)](./day10.md) - __SOLVED__: Custom instruction set for reversing followed by exhaustive search for flag
